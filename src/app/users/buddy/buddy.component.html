@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row ">
+      <div class="card  mx-auto col-sm-10" style="margin-top: 2em;margin-bottom: 5em;" >
+          <div class="card-body">
+              <h2 class="text-center display-6 card-title">Welcome Jay....!</h2>
+              <div class="col-md-2 mx-auto im ma">
+                  <img src="../../../assets/images/cbot.jpg">
+                </div>
+            <h6 class="text-center card-subtitle mb-2 text-muted">Let Me Help You Budget</h6>
+            <br>
+            <div class="mx-auto col-sm-4">
+              <input [(ngModel)]="earn" type="text" class="text-center form-control" placeholder="Enter your Earnings">
+          
+            </div>
+              <br>
+                    <div class="mb-3 row">
+                      <h2  class="display-6 col-sm-4 col-form-label">Emergency Fund : </h2>
+                      <div class="col-sm-2">
+                        <input [(ngModel)]="em" type="number" class="form-control">
+                      </div>
+                      <h2  class="col-sm-2 col-form-label"> <strong>{{0 + (earn * em )/100 }} INR</strong>  </h2>
+                      
+                    </div>
+
+                    <div class="mb-3 row">
+                      <h2  class="display-6 col-sm-4 col-form-label">Mutual Fund and Bonds: </h2>
+                      <div class="col-sm-2">
+                        <input [(ngModel)]="mf"type="number" class="form-control">
+                      </div>
+                      <h2  class="col-sm-2 col-form-label"> <strong>{{0 + (earn * mf )/100 }} INR</strong>  </h2>
+                      
+                    </div>
+
+                    <div class="mb-3 row">
+                      <h2  class="display-6 col-sm-4 col-form-label">Stocks and Cryptos : </h2>
+                      <div class="col-sm-2">
+                        <input [(ngModel)]="sf"type="number" class="form-control">
+                      </div>
+                      <h2  class="col-sm-2 col-form-label"> <strong>{{0 + (earn * sf )/100 }} INR</strong>  </h2>
+                      
+                    </div>
+
+                    <div class="mb-3 row">
+                      <h2  class="display-6 col-sm-4 col-form-label">Self-Reward Fund : </h2>
+                      <div class="col-sm-2">
+                        <input [(ngModel)]="rf"type="number" class="form-control">
+                      </div>
+                      <h2  class="col-sm-2 col-form-label"> <strong>{{0 + (earn * rf )/100 }} INR</strong>  </h2>
+                      
+                    </div>
+             
+            <h2 class="card-text text-dark" >Your this Month Bill Value is {{billvalue}} INR </h2>
+            <div class="text-center alert alert-info" *ngIf='earn>0' role="alert">
+              You are currently on {{0 + (earn * (100 - (rf + sf + mf + em ) ))/100 - billvalue}} INR for this Month !!
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
